@@ -106,7 +106,7 @@ open class Actor<T>: CustomStringConvertible, Hashable {
         let promise = Promise<T>()
         
         // Create Intermediary Mailbox Actor
-        let mailbox = self.context.create(constructor: Mailbox<T>.self) as! Mailbox<T>
+        let mailbox = self.context.createActor(of: Mailbox<T>.self) as! Mailbox<T>
         mailbox.forward(future: promise.future, actor: self, message: message)
         
         // Await Response Synchronously

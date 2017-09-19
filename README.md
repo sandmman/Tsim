@@ -29,8 +29,8 @@ public class Worker: Actor<Method> {
 }
 
 let system = System<Method>()
-let master = system.create(constructor: Master.self)
-let worker = system.create(constructor: Worker.self)
+let master = system.createActor(of: Master.self)
+let worker = system.createActor(of: Worker.self)
 
 // .get([ECHO] Hello?)
 let response = master.ask(actor: worker, message: .get("Hello?"))

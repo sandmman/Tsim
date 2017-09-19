@@ -61,7 +61,7 @@ open class System<T> {
     ///
     /// Factory for new Actors
     ///
-    public func create(constructor: Actor<T>.Type) -> Actor<T> {
+    public func createActor(of constructor: Actor<T>.Type) -> Actor<T> {
         let actor = constructor.init(ref: createRef(), context: self)
         actors.insert(actor)
         return actor

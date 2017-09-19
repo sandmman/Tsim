@@ -67,8 +67,8 @@ class TsimTests: XCTestCase {
 
     func testAsk() {
         let system = System<Cases>()
-        let master = system.create(constructor: Master.self)
-        let worker1 = system.create(constructor: Worker.self)
+        let master = system.createActor(of: Master.self)
+        let worker1 = system.createActor(of: Worker.self)
     
         let response = master.ask(actor: worker1, message: .get("Hello?"))
         XCTAssertNotNil(response)
@@ -77,8 +77,8 @@ class TsimTests: XCTestCase {
     
     func testTell() {
         let system = System<Cases>()
-        let master = system.create(constructor: Master.self)
-        let worker1 = system.create(constructor: Worker.self)
+        let master = system.createActor(of: Master.self)
+        let worker1 = system.createActor(of: Worker.self)
         
         master.tell(actor: worker1, message: .post("hello"))
         
