@@ -1,6 +1,6 @@
 # Tsim
 
-> Brings the Scala Akka model in Swift
+> Brings the Scala Akka model to Swift
 
 ### Usage
 
