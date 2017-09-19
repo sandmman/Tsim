@@ -1,6 +1,6 @@
 # Tsim
 
-> A simple port of the Scala Akka model in Swift
+> Brings the Scala Akka model to Swift
 
 ### Usage
 
@@ -11,7 +11,7 @@ public enum Method {
     case get(String)
 }
 
-public class Master: Actor<Methods> {
+public class Master: Actor<Method> {
     
     override public func receive(sender: Actor<Method>?, message: Cases) {
         print("Master: \(message)")
